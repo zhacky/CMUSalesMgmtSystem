@@ -12,13 +12,13 @@
       <Value Profile="(Default)">Data Source=SAMSUNGLAPTOP;Initial Catalog=TestPOS;Persist Security Info=True;User ID=Zhack;Password=feedback</Value>
     </Setting>
     <Setting Name="ServerName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">SAMSUNGLAPTOP</Value>
+      <Value Profile="(Default)">CORE2DUO</Value>
     </Setting>
     <Setting Name="UserName" Type="System.String" Scope="User">
       <Value Profile="(Default)">Zhack</Value>
     </Setting>
     <Setting Name="UserPassword" Type="System.String" Scope="User">
-      <Value Profile="(Default)">backfire</Value>
+      <Value Profile="(Default)">feedback</Value>
     </Setting>
     <Setting Name="DatabaseName" Type="System.String" Scope="User">
       <Value Profile="(Default)" />

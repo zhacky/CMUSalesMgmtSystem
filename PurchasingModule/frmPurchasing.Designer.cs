@@ -32,7 +32,12 @@
             this.stsPurchasing = new System.Windows.Forms.StatusStrip();
             this.tsCurrentUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.dgvPurchasing = new System.Windows.Forms.DataGridView();
+            this.ItemPicture = new System.Windows.Forms.PictureBox();
+            this.btnAddItem = new System.Windows.Forms.Button();
+            this.btnDeleteItem = new System.Windows.Forms.Button();
             this.stcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.st_cat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.st_Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stqty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stunit = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,9 +45,6 @@
             this.stentrydate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stlastmodified = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stmodifiedby = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemPicture = new System.Windows.Forms.PictureBox();
-            this.btnAddItem = new System.Windows.Forms.Button();
-            this.btnDeleteItem = new System.Windows.Forms.Button();
             this.stsPurchasing.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchasing)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemPicture)).BeginInit();
@@ -66,9 +68,14 @@
             // 
             // dgvPurchasing
             // 
+            this.dgvPurchasing.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPurchasing.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPurchasing.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.stcode,
+            this.st_cat,
+            this.st_Status,
             this.stname,
             this.stqty,
             this.stunit,
@@ -81,17 +88,61 @@
             this.dgvPurchasing.Size = new System.Drawing.Size(820, 308);
             this.dgvPurchasing.TabIndex = 1;
             // 
+            // ItemPicture
+            // 
+            this.ItemPicture.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ItemPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ItemPicture.Location = new System.Drawing.Point(12, 12);
+            this.ItemPicture.Name = "ItemPicture";
+            this.ItemPicture.Size = new System.Drawing.Size(123, 91);
+            this.ItemPicture.TabIndex = 2;
+            this.ItemPicture.TabStop = false;
+            // 
+            // btnAddItem
+            // 
+            this.btnAddItem.Location = new System.Drawing.Point(141, 12);
+            this.btnAddItem.Name = "btnAddItem";
+            this.btnAddItem.Size = new System.Drawing.Size(150, 91);
+            this.btnAddItem.TabIndex = 3;
+            this.btnAddItem.Text = "ADD NEW ITEM";
+            this.btnAddItem.UseVisualStyleBackColor = true;
+            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
+            // 
+            // btnDeleteItem
+            // 
+            this.btnDeleteItem.Location = new System.Drawing.Point(297, 12);
+            this.btnDeleteItem.Name = "btnDeleteItem";
+            this.btnDeleteItem.Size = new System.Drawing.Size(150, 91);
+            this.btnDeleteItem.TabIndex = 3;
+            this.btnDeleteItem.Text = "DELETE ITEM";
+            this.btnDeleteItem.UseVisualStyleBackColor = true;
+            // 
             // stcode
             // 
             this.stcode.HeaderText = "Item Code";
+            this.stcode.MinimumWidth = 20;
             this.stcode.Name = "stcode";
             this.stcode.ReadOnly = true;
+            this.stcode.Width = 200;
+            // 
+            // st_cat
+            // 
+            this.st_cat.HeaderText = "Category";
+            this.st_cat.Name = "st_cat";
+            // 
+            // st_Status
+            // 
+            this.st_Status.HeaderText = "Status";
+            this.st_Status.Name = "st_Status";
             // 
             // stname
             // 
+            this.stname.FillWeight = 200F;
             this.stname.HeaderText = "Item Name";
+            this.stname.MinimumWidth = 20;
             this.stname.Name = "stname";
             this.stname.ReadOnly = true;
+            this.stname.Width = 200;
             // 
             // stqty
             // 
@@ -129,34 +180,6 @@
             this.stmodifiedby.Name = "stmodifiedby";
             this.stmodifiedby.ReadOnly = true;
             // 
-            // ItemPicture
-            // 
-            this.ItemPicture.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ItemPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ItemPicture.Location = new System.Drawing.Point(12, 12);
-            this.ItemPicture.Name = "ItemPicture";
-            this.ItemPicture.Size = new System.Drawing.Size(123, 91);
-            this.ItemPicture.TabIndex = 2;
-            this.ItemPicture.TabStop = false;
-            // 
-            // btnAddItem
-            // 
-            this.btnAddItem.Location = new System.Drawing.Point(141, 12);
-            this.btnAddItem.Name = "btnAddItem";
-            this.btnAddItem.Size = new System.Drawing.Size(150, 91);
-            this.btnAddItem.TabIndex = 3;
-            this.btnAddItem.Text = "ADD NEW ITEM";
-            this.btnAddItem.UseVisualStyleBackColor = true;
-            // 
-            // btnDeleteItem
-            // 
-            this.btnDeleteItem.Location = new System.Drawing.Point(297, 12);
-            this.btnDeleteItem.Name = "btnDeleteItem";
-            this.btnDeleteItem.Size = new System.Drawing.Size(150, 91);
-            this.btnDeleteItem.TabIndex = 3;
-            this.btnDeleteItem.Text = "DELETE ITEM";
-            this.btnDeleteItem.UseVisualStyleBackColor = true;
-            // 
             // frmPurchasing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,6 +194,7 @@
             this.MinimumSize = new System.Drawing.Size(860, 480);
             this.Name = "frmPurchasing";
             this.Text = "Purchasing";
+            this.Load += new System.EventHandler(this.frmPurchasing_Load);
             this.stsPurchasing.ResumeLayout(false);
             this.stsPurchasing.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchasing)).EndInit();
@@ -185,7 +209,12 @@
         private System.Windows.Forms.StatusStrip stsPurchasing;
         private System.Windows.Forms.ToolStripStatusLabel tsCurrentUser;
         private System.Windows.Forms.DataGridView dgvPurchasing;
+        private System.Windows.Forms.PictureBox ItemPicture;
+        private System.Windows.Forms.Button btnAddItem;
+        private System.Windows.Forms.Button btnDeleteItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn stcode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn st_cat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn st_Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn stname;
         private System.Windows.Forms.DataGridViewTextBoxColumn stqty;
         private System.Windows.Forms.DataGridViewTextBoxColumn stunit;
@@ -193,9 +222,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn stentrydate;
         private System.Windows.Forms.DataGridViewTextBoxColumn stlastmodified;
         private System.Windows.Forms.DataGridViewTextBoxColumn stmodifiedby;
-        private System.Windows.Forms.PictureBox ItemPicture;
-        private System.Windows.Forms.Button btnAddItem;
-        private System.Windows.Forms.Button btnDeleteItem;
 
     }
 }

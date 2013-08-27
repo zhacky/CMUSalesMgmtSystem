@@ -1,4 +1,13 @@
-﻿
+﻿---------DatabaseSettings.vb-------
+connString = "Data Source=SAMSUNGLAPTOP;Initial Catalog=TestPOS;Persist Security Info=True;User ID=Zhack;Password=backfire"
+ 'If modDatabase.checkSqlConnection() Then
+        '    Dim startApp As New frmMain
+        '    startApp.Show()
+        '    Me.Close()
+
+        'End If
+
+
 '                Select Case conn.State
 '                    Case ConnectionState.Connecting
 '                        Console.WriteLine("Connecting...")
@@ -46,3 +55,4 @@
 '                Console.WriteLine("Error executing SQL command" & vbCrLf & ex.Message)
 '            End Try
 
+---------DatabaseSettings.vb END-------

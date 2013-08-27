@@ -5,12 +5,14 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B210E96D-15EC-4442-BD48-1EEC6AC1279F}</ProjectGuid>
+    <ProjectGuid>{F5AC4277-5B3A-43D9-A4FB-7C4899273D48}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PurchasingModule</RootNamespace>
-    <AssemblyName>PurchasingModule</AssemblyName>
+    <RootNamespace>DatabaseConfigModule</RootNamespace>
+    <AssemblyName>DatabaseConfigModule</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -40,6 +42,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -47,26 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAddItem.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAddItem.Designer.cs">
-      <DependentUpon>frmAddItem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmPurchasing.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPurchasing.Designer.cs">
-      <DependentUpon>frmPurchasing.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Actions\objDatabase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAddItem.resx">
-      <DependentUpon>frmAddItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPurchasing.resx">
-      <DependentUpon>frmPurchasing.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,6 +61,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -85,9 +72,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
