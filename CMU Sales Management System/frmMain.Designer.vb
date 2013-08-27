@@ -154,7 +154,7 @@ Partial Class frmMain
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(584, 362)
+        Me.ClientSize = New System.Drawing.Size(584, 384)
         Me.ControlBox = False
         Me.Controls.Add(Me.gbMain)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)

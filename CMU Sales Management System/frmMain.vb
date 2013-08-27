@@ -31,4 +31,8 @@ Public Class frmMain
             Me.Close()
         End If
     End Sub
+
+    Private Sub btnSystem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSystem.Click
+        diaSystem.ShowDialog()
+    End Sub
 End Class

@@ -86,6 +86,12 @@
     <Compile Include="Dialogs\DatabaseSettings.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Dialogs\diaSystem.Designer.vb">
+      <DependentUpon>diaSystem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\diaSystem.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMain.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Dialogs\DatabaseSettings.resx">
       <DependentUpon>DatabaseSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\diaSystem.resx">
+      <DependentUpon>diaSystem.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>

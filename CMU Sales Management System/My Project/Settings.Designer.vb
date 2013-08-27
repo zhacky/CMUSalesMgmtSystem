@@ -66,14 +66,17 @@ Namespace My
             End Set
         End Property
         
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("Data Source=SAMSUNGLAPTOP;Initial Catalog=TestPOS;Persist Security Info=True;User"& _ 
             " ID=Zhack;Password=backfire")>  _
-        Public ReadOnly Property connectionString() As String
+        Public Property connectionString() As String
             Get
                 Return CType(Me("connectionString"),String)
             End Get
+            Set
+                Me("connectionString") = value
+            End Set
         End Property
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
@@ -86,6 +89,54 @@ Namespace My
             End Get
             Set
                 Me("dummyString") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("SAMSUNGLAPTOP")>  _
+        Public Property ServerName() As String
+            Get
+                Return CType(Me("ServerName"),String)
+            End Get
+            Set
+                Me("ServerName") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Zhack")>  _
+        Public Property UserName() As String
+            Get
+                Return CType(Me("UserName"),String)
+            End Get
+            Set
+                Me("UserName") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("backfire")>  _
+        Public Property UserPassword() As String
+            Get
+                Return CType(Me("UserPassword"),String)
+            End Get
+            Set
+                Me("UserPassword") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property DatabaseName() As String
+            Get
+                Return CType(Me("DatabaseName"),String)
+            End Get
+            Set
+                Me("DatabaseName") = value
             End Set
         End Property
     End Class
