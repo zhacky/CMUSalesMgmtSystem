@@ -4,47 +4,42 @@ Imports System.Data.SqlClient
 Public Class DatabaseSettings
 
     Private Sub OK_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK_Button.Click
-
-        Me.DialogResult = System.Windows.Forms.DialogResult.OK
-
-
+        saveInfoToSettings()
         If modDatabase.checkSqlConnection() Then
-            frmMain.Show()
             Me.Close()
-
-
         End If
-
-
-
-
     End Sub
 
     Private Sub Cancel_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel_Button.Click
         Me.DialogResult = System.Windows.Forms.DialogResult.Cancel
-
         Me.Close()
     End Sub
 
     Private Sub DatabaseSettings_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'If modDatabase.checkSqlConnection() Then
-        '    Dim startApp As New frmMain
-        '    startApp.Show()
-        '    Me.Close()
-
-        'End If
         loadDatabaseSettings()
     End Sub
 
     Private Sub btnTestConn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTestConn.Click
-
-
-        If modDatabase.checkSqlConnection(cboServerName.Text, txtUsername.Text, txtPassword.Text, cboDatabase.Text) Then
-            saveInfoToSettings()
-            MessageBox.Show("Test Succeeded")
-
+        If cboServerName.Text.Length < 1 Then
+            MessageBox.Show("Server field cannot be empty...")
+        ElseIf txtUsername.Text.Length < 1 Then
+            MessageBox.Show("Username field cannot be empty...")
+        ElseIf txtPassword.Text.Length < 1 Then
+            MessageBox.Show("Password field cannot be empty...")
+        ElseIf cboDatabase.Text.Length < 1 Then
+            MessageBox.Show("Database field cannot be empty...")
         Else
-            Console.WriteLine("Test Unsuccessful")
+
+
+            saveInfoToSettings()
+
+            If modDatabase.checkSqlConnection(cboServerName.Text, txtUsername.Text, txtPassword.Text, cboDatabase.Text) Then
+
+                MessageBox.Show("Test Succeeded")
+
+            Else
+                Console.WriteLine("Test Unsuccessful")
+            End If
         End If
     End Sub
 
@@ -92,15 +87,19 @@ Public Class DatabaseSettings
 
     Private Sub saveInfoToSettings()
         Dim server As String = cboServerName.Text
+        My.Settings.ServerName = server
         Dim username As String = txtUsername.Text
+        My.Settings.UserName = username
         Dim password As String = txtPassword.Text
+        My.Settings.UserPassword = password
         Dim database As String = cboDatabase.Text
         My.Settings.DatabaseName = database
+
 
         Dim testString As String = "Data Source=" & server & ";Initial Catalog=" & database & ";Persist Security Info=True;User ID=" & username & ";Password=" & password & ""
         My.Settings.dummyString = testString
         My.Settings.Save()
-        MessageBox.Show(My.Settings.DatabaseName.ToString)
+
 
     End Sub
 

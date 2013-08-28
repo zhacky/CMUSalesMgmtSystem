@@ -56,3 +56,34 @@ connString = "Data Source=SAMSUNGLAPTOP;Initial Catalog=TestPOS;Persist Security
 '            End Try
 
 ---------DatabaseSettings.vb END-------
+
+-----------testDatabase() function -----------
+private void testDatabase()
+        {
+            SqlConnection conn = new SqlConnection(connString);
+            SqlCommand sqlcommand = new SqlCommand("SELECT * FROM [TestPOS].[dbo].[pur_stocks]", conn);
+            SqlDataReader data;
+
+            try
+            {
+                conn.Open();
+                data = sqlcommand.ExecuteReader();
+                while (data.Read())
+                {
+                    for (int i = 0; i < data.FieldCount - 1; i++)
+                    {
+                        Console.WriteLine(data[i].ToString());
+                    }
+                    //dgvPurchasing.Rows.Add(data);
+                }
+                conn.Close();
+            }
+            catch (SqlException ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+-----------testDatabase() function END-----------

@@ -157,9 +157,11 @@ Partial Class frmMain
         Me.ClientSize = New System.Drawing.Size(584, 384)
         Me.ControlBox = False
         Me.Controls.Add(Me.gbMain)
+        Me.HelpButton = True
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(600, 400)
         Me.Name = "frmMain"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Central Mindanao University Food and Lodging Services"
         Me.gbMain.ResumeLayout(False)
         Me.ResumeLayout(False)

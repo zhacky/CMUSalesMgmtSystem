@@ -8,12 +8,12 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("CMUSalesMgmtSystem")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("Microsoft")> 
-<Assembly: AssemblyProduct("CMUSalesMgmtSystem")> 
-<Assembly: AssemblyCopyright("Copyright © Microsoft 2013")> 
-<Assembly: AssemblyTrademark("")> 
+<Assembly: AssemblyTitle("CMU Sales Management System")> 
+<Assembly: AssemblyDescription("A Comprehensive Sales and Stocks Monitoring and Management System built for Central Mindanao University Canteen.  This software automates the sales and production operations for the University Food and Lodging Services.  This software is protected by copyright laws, unauthorized duplication and distribution is prohibited.  All rights reserved.")> 
+<Assembly: AssemblyCompany("i4Links Systems, Inc.")> 
+<Assembly: AssemblyProduct("CMU Sales Management System")> 
+<Assembly: AssemblyCopyright("Copyright © i4Links Systems, Inc. 2013")> 
+<Assembly: AssemblyTrademark("i4Links")> 
 
 <Assembly: ComVisible(False)>
 
